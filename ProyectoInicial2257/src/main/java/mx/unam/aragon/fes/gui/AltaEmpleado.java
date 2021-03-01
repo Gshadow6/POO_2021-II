@@ -5,6 +5,7 @@
  */
 
 package mx.unam.aragon.fes.gui;
+Import  mx.unam.aragon.fes.Empleado;
 
 /**
  *
@@ -59,11 +60,12 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jTextField13 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
         jTextField15 = new javax.swing.JTextField();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 51, 255));
@@ -175,7 +177,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
                         .add(jLabel9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jTextField11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(0, 21, Short.MAX_VALUE))
+                .add(0, 50, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -258,22 +260,30 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Personales", jPanel1);
 
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel10.setText("Numero de empleado:");
 
+        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel11.setText("Departamento:");
 
+        jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel12.setText("Sueldo:");
 
         jLabel13.setText("$");
 
+        jLabel14.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel14.setText("Horas extra:");
 
+        jTextField12.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jTextField12.setText("jTextField12");
 
+        jTextField13.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jTextField13.setText("jTextField13");
 
+        jTextField14.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jTextField14.setText("jTextField14");
 
+        jTextField15.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jTextField15.setText("jTextField15");
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
@@ -306,7 +316,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
                                 .add(jTextField14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 18, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(0, 667, Short.MAX_VALUE)))
+                        .add(0, 688, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -329,72 +339,110 @@ public class AltaEmpleado extends javax.swing.JFrame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel14)
                     .add(jTextField15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Empresariales", jPanel2);
 
-        jToggleButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        jToggleButton2.setText("Cargar");
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jButton1.setText("Nuevo Registro");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
-        jToggleButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        jToggleButton1.setText("Guardar");
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jButton2.setText("Enviar");
+        jButton2.setEnabled(false);
 
-        jToggleButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        jToggleButton3.setText(">>");
+        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jButton3.setText("<<");
 
-        jToggleButton4.setText("<<");
+        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jButton4.setText(">>");
 
-        jToggleButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        jToggleButton5.setText("<<");
+        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jButton5.setText("Cargar");
+
+        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jButton6.setText("Guardar");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(jTabbedPane1)
-                        .addContainerGap())
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(jToggleButton5)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jToggleButton3)
-                        .add(224, 224, 224)
-                        .add(jToggleButton2)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jToggleButton1)
-                        .add(41, 41, 41))))
-            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(layout.createSequentialGroup()
-                    .add(425, 425, 425)
-                    .add(jToggleButton4)
-                    .addContainerGap(426, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .add(jTabbedPane1))
+                    .add(layout.createSequentialGroup()
+                        .add(23, 23, 23)
+                        .add(jButton1)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton2)
+                        .add(194, 194, 194)
+                        .add(jButton3)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton4)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jButton5)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton6)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 355, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 371, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(18, 18, 18)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jToggleButton2)
-                    .add(jToggleButton1)
-                    .add(jToggleButton3)
-                    .add(jToggleButton5))
-                .addContainerGap(253, Short.MAX_VALUE))
-            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(layout.createSequentialGroup()
-                    .add(313, 313, 313)
-                    .add(jToggleButton4)
-                    .addContainerGap(314, Short.MAX_VALUE)))
+                    .add(jButton1)
+                    .add(jButton2)
+                    .add(jButton3)
+                    .add(jButton4)
+                    .add(jButton5)
+                    .add(jButton6))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        System.out.println("Nuevo Empleado");
+        this.LimpiarFormulario();
+        Empleado emp= new Empleado();
+        emp.setNombre(this.jTextField1.getText() );
+        emp.setApPaternp(this.jTextField2.getText() );
+        emp.setApMaterno(jTextField3.getText() );
+        emp.setEdad( Integer.parseInt( jTextField.getText() ) );//Convierte a string
+        emp.setCurp( jTextField.getText());
+        emp.getDomicilio().setCalle(this.jTextField6.getText());        
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    
+    private void LimpiarFormulario(){
+        this.jTextField1.setText("");
+        this.jTextField2.setText("");
+        this.jTextField3.setText("");
+        this.jTextField4.setText("");
+        this.jTextField5.setText("");
+        this.jTextField6.setText("");
+        this.jTextField7.setText("");
+        this.jTextField8.setText("");
+        this.jTextField9.setText("");
+        this.jTextField10.setText("");
+        this.jTextField4.setColumns(10);
+        this.jTextField11.setText("");
+        this.jTextField11.setColumns(10);
+        this.jTextField12.setText("");
+        this.jTextField13.setText("");
+        this.jTextField14.setText("");               
+    }
 
     /**
      * @param args the command line arguments
@@ -432,6 +480,12 @@ public class AltaEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -465,11 +519,6 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
     // End of variables declaration//GEN-END:variables
 
 }
