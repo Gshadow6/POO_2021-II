@@ -5,7 +5,8 @@
  */
 
 package mx.unam.aragon.fes.gui;
-Import  mx.unam.aragon.fes.Empleado;
+import  mx.unam.aragon.fes.Empleado;
+
 
 /**
  *
@@ -421,16 +422,18 @@ public class AltaEmpleado extends javax.swing.JFrame {
         emp.setApMaterno(this.jTextField3.getText() );
         emp.setEdad( Integer.parseInt( jTextField4.getText() ) );//Convierte a string
         emp.setCurp( this.jTextField5.getText());
-        emp.getDireccion().setCalle(this.jTextField6.getText() );
-        emp.getDireccion().setNumero(this.jTextField7.getText() );
-        emp.getDireccion().setColonia(this.jTextField8.getText() );
-        emp.getDireccion().setDelegacion(this.jTextField9.getText() );
-        emp.getDireccion().setEstado(this.jTextField10.getText() );
-        emp.getDireccion().setCp(this.jTextField11.getText() );
+        emp.setDomicilio(new Direccion());
+        emp.getDomicilio().setCalle(this.jTextField6.getText() );
+        emp.getDomicilio().setNumero(this.jTextField7.getText() );
+        emp.getDomicilio().setColonia(this.jTextField8.getText() );
+        emp.getDomicilio().setDelegacion(this.jTextField9.getText() );
+        emp.getDomicilio().setEstado(this.jTextField10.getText() );
+        emp.getDomicilio().setCp(this.jTextField11.getText() );
         emp.setNumeroDeEmpleado(this.jTextField12.getText());
         emp.setDepartamento(this.jTextField13.getText());
-        emp.setSueldo( Integer.parseInt( jTextField14.getText() ) );
+        emp.setSueldo( Float.parseFloat( jTextField14.getText() ) );
         emp.setHorasExtra( Integer.parseInt( jTextField15.getText() ) );
+        int confirmar= JOptionPane.showConfirmDialog(this, "¿Desea guardar estos datos?");
     }//GEN-LAST:event_jButton1MouseClicked
 
     
