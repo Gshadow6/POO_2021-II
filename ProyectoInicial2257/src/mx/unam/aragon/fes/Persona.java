@@ -7,10 +7,10 @@ package mx.unam.aragon.fes;
 
 /**
  *
- * @author AXEL
+ * @author unam
  */
 public class Persona {
-     private String nombre;
+    private String nombre;
     private String apPaterno;
     private String apMaterno;
     private int edad;
@@ -69,8 +69,12 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apPaterno=" + apPaterno + ", apMaterno=" + apMaterno + ", edad=" + edad + ", curp=" + curp + '}';
+        return "Persona{" + "nombre=" + nombre + "\n apPaterno=" + apPaterno + "\n apMaterno=" + apMaterno + "\n edad=" + edad + "\n curp=" + curp + '}';
     }
+
+    
+    
+    
     
     
     

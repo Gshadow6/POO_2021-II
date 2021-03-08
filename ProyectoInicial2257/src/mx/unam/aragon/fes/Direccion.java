@@ -7,7 +7,7 @@ package mx.unam.aragon.fes;
 
 /**
  *
- * @author AXEL
+ * @author unam
  */
 public class Direccion {
     private String calle;
@@ -79,9 +79,9 @@ public class Direccion {
 
     @Override
     public String toString() {
-        return "Direccion{" + "calle=" + calle + "\n numero=" + numero + "\n  colonia=" + colonia + "\n  delegacion=" + delegacion + "\n  estado=" + estado + "\n  cp=" + cp + '}';
+        return "Direccion{" + "calle=" + calle + "\n numero=" + numero + "\n colonia=" + colonia + "\n delegacion=" + delegacion + "\n estado=" + estado + "\n cp=" + cp + '}';
     }
     
     
-    
+         
 }

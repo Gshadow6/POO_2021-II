@@ -7,9 +7,10 @@ package mx.unam.aragon.fes;
 
 /**
  *
- * @author AXEL
+ * @author unam
  */
-public class Empleado extends Persona{
+public class Empleado extends Persona {
+
     private int numeroEmpleado;
     private String departamento;
     private float sueldo;
@@ -81,12 +82,12 @@ public class Empleado extends Persona{
         return "Empleado{" + "numeroEmpleado=" + numeroEmpleado + ", departamento=" + departamento + ", sueldo=" + sueldo + ", horasExtra=" + horasExtra + ", domicilio=" + domicilio + '}';
     }
 
-    public float calcularSueldo(){
-        //Horas extras a $150 por hora
-        float sueldoTotal= 0.0f;
-        sueldoTotal= this.sueldo + (this.horasExtra * 150.0f);
-    
+    public float calcularSueldo() {
+        // Hoas exta a $150.0
+        float sueldoTotal = 0.0f;
+        sueldoTotal = this.sueldo + (this.horasExtra * 150.0f);
+
         return sueldoTotal;
     }
-   
+
 }
