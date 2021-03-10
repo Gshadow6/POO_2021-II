@@ -5,11 +5,13 @@
  */
 package mx.unam.aragon.fes;
 
+import java.io.Serializable;
+
 /**
  *
  * @author unam
  */
-public class Direccion {
+public class Direccion implements Serializable{
     private String calle;
     private String numero;
     private String colonia;
