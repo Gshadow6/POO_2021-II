@@ -20,12 +20,14 @@ import mx.unam.aragon.fes.persistencia.ArchivoEmpleado;
  */
 public class AltaEmpleado extends javax.swing.JFrame {
     private ArrayList<Empleado> lista;
+    private int indice;
     /**
      * Creates new form AltaEmpleado
      */
     public AltaEmpleado() {
         initComponents();
         lista= new ArrayList<Empleado>();
+        indice= 0;
     }
 
     /**
@@ -75,6 +77,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -310,8 +313,18 @@ public class AltaEmpleado extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cargar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText(">>");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jButton4.setText("<<");
 
@@ -329,6 +342,9 @@ public class AltaEmpleado extends javax.swing.JFrame {
                 jButton6MouseClicked(evt);
             }
         });
+
+        jLabel14.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel14.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -351,13 +367,19 @@ public class AltaEmpleado extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(384, 384, 384))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -372,7 +394,6 @@ public class AltaEmpleado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        // TODO add your handling code here:
         System.out.println("Nuevo empleado!!!");
         this.limpiarFormulario();
         this.jButton6.setEnabled(true); 
@@ -382,8 +403,6 @@ public class AltaEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        // TODO add your handling code here:
-                
         Empleado emp= new Empleado();
         emp.setNombre( this.jTextField1.getText() );
         emp.setApPaterno(this.jTextField2.getText() );
@@ -419,7 +438,6 @@ public class AltaEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
         ArchivoEmpleado persistencia = new ArchivoEmpleado();
         JFileChooser jfc = new JFileChooser();
         jfc.showSaveDialog(this);
@@ -433,6 +451,53 @@ public class AltaEmpleado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+
+        int respuesta = JOptionPane.showConfirmDialog(this, "Esta accion borrará los datos actuales ¿Estas seguro de continuar?");
+        if (respuesta == 0){//Constantes de clase 
+            //leer del archivo
+            //Subir el array list actual
+            //El primer elemento del array list se pondrá en el formulario
+            ArchivoEmpleado persistencia = new ArchivoEmpleado();
+            JFileChooser jfc = new JFileChooser();
+            jfc.showOpenDialog(this);
+            persistencia.setArchivo(jfc.getSelectedFile().getAbsolutePath());
+            this.lista = persistencia.leerEmpleado();
+            this.limpiarFormulario();
+            this.indice =0;
+            this.llenarFormulario(this.indice);
+            
+        }else{
+                    
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+            //falta hacer control de tamaño
+        if(this.indice < this.lista.size()){
+            this.indice++; //this.indice = this.indice + 1;
+        
+        }else{
+            this.indice = 0;
+        
+        }
+        
+        this.jLabel14.setText(""+ this.indice);
+        llenarFormulario(indice);    
+    }//GEN-LAST:event_jButton3MouseClicked
+    
+    private void llenarFormulario(int indice){
+        if (lista.size()>0){
+            Empleado e = lista.get(indice);
+            this.jTextField1.setText(e.getNombre());
+            this.jTextField2.setText(e.getApPaterno());
+            this.jTextField3.setText(e.getApMaterno());
+            this.jTextField4.setText("" + e.getEdad());
+            this.jTextField5.setText(e.getCurp());     
+            //Terminar llenarFormulario
+            
+        }
+    }
      
     private void limpiarFormulario(){
       this.jTextField1.setText("");
@@ -505,6 +570,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
