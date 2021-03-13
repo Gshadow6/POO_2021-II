@@ -327,6 +327,11 @@ public class AltaEmpleado extends javax.swing.JFrame {
         });
 
         jButton4.setText("<<");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton5.setText("Nuevo registro");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -485,6 +490,19 @@ public class AltaEmpleado extends javax.swing.JFrame {
         this.jLabel14.setText(""+ this.indice);
         llenarFormulario(indice);    
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        if(this.indice > 0){
+            this.indice--; //this.indice = this.indice - 1;
+        
+        }else{
+            this.indice = this.lista.size();
+        
+        }
+        
+        this.jLabel14.setText(""+ this.indice);
+        llenarFormulario(indice);
+    }//GEN-LAST:event_jButton4MouseClicked
     
     private void llenarFormulario(int indice){
         if (lista.size()>0){
@@ -495,7 +513,16 @@ public class AltaEmpleado extends javax.swing.JFrame {
             this.jTextField4.setText("" + e.getEdad());
             this.jTextField5.setText(e.getCurp());     
             //Terminar llenarFormulario
-            
+            this.jTextField6.setText(e.getDomicilio().getCalle());
+            this.jTextField7.setText("" + e.getDomicilio().getNumero());
+            this.jTextField8.setText(e.getDomicilio().getColonia());
+            this.jTextField9.setText(e.getDomicilio().getDelegacion());
+            this.jTextField10.setText(e.getDomicilio().getEstado());
+            this.jTextField15.setText(e.getDomicilio().getCp());
+            this.jTextField11.setText("" + e.getNumeroEmpleado());
+            this.jTextField12.setText(e.getDepartamento());
+            this.jTextField13.setText("" + e.getSueldo());
+            this.jTextField14.setText("" + e.getHorasExtra());
         }
     }
      
@@ -517,10 +544,6 @@ public class AltaEmpleado extends javax.swing.JFrame {
       this.jTextField13.setText("0.0");
       this.jTextField14.setText("0");
       this.jTextField15.setText("");
-      
-      
-      
-      
     }
     
     /**
