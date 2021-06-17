@@ -30,6 +30,12 @@ public class SmartPhone {
         
     }
 
+    public SmartPhone(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    
     public String getMarca() {
         return marca;
     }
@@ -67,12 +73,19 @@ public class SmartPhone {
         return "SmartPhone{" + "marca=" + marca + ", modelo=" + modelo + ", color=" + color + ", tamanio=" + tamanio + '}';
     }
     
-    public boolean enceder(){
+    public boolean encender(){
         System.out.println("Encendiendo el equipo "+ this.marca);
         return true;
     }
     
-    public int llamara(int numeroDestino){
+    /**
+     * El método llamar simula el funcionamiento de un programa de telefono en un
+     * SmartPhone, esto gracias a la posibilidad de la abstracción
+     * 
+     * @param numeroDestino Número a llamar
+     * @return int que representa el numero d emiutos que duro la llamada
+     */
+    public int llamar(int numeroDestino){
         System.out.println("Llamando al numero"+ numeroDestino);
         return 60;
     }
