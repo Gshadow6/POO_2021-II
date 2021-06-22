@@ -6,6 +6,7 @@
 package composicion2257;
 
 import ico.fes.objetos.Puerta;
+import ico.fes.objetos.PuertaDeSeguridad;
 import ico.fes.objetos.Ventana;
 import ico.fes.partes.Muro;
 import ico.fes.partes.Piso;
@@ -46,7 +47,17 @@ public class Composicion2257 {
         Muro muroSur= new Muro(5.0f, 4.5f, 2.5f, Color.blue, 
                 new Puerta("Aluminio", Color.white, false), null);
         
-        //creacion de habitacion
+        System.out.println("--------------Ejemplos de herencia-------------");
+        PuertaDeSeguridad puer1 = new PuertaDeSeguridad();
+        puer1.abrir();
+        puer1.cerrar();
+        puer1.setColor(Color.gray);
+        System.out.println("La puerta de seguridad es de color: "+ puer1.getColor());    
+        
+        PuertaDeSeguridad puer2 = new PuertaDeSeguridad("Chapa electronica", "1234dios", "metal", Color.gray, false);
+        System.out.println(puer2.toString());
+        
+        System.out.println("-------------creacion de habitacion---------------");
         System.out.println("----------------------------------------------------------------------------------------------");
         
         Muro[] tmpMuros= new Muro[4];
@@ -59,10 +70,11 @@ public class Composicion2257 {
         habitacion Shadow= new habitacion(2, 1, tmpMuros, new Techo(3.0f, 2.5f, Color.white, "Concreto"), new Piso(3.0f, 2.5f, "Losas", Color.gray));
         
         System.out.println(Shadow);
-        System.out.println(Shadow.getMuro()[0]);
-        System.out.println(Shadow.getMuro()[1]);
-        System.out.println(Shadow.getMuro()[2]);
-        System.out.println(Shadow.getMuro()[3]);
+        System.out.println("Muro Sur="+Shadow.getMuro()[0]);
+        System.out.println("Muro Norte="+Shadow.getMuro()[1]);
+        System.out.println("Muro Este="+Shadow.getMuro()[2]);
+        System.out.println("Muro Oeste="+Shadow.getMuro()[3]);
+        
     }
     
 }

@@ -88,7 +88,7 @@ public class Muro {
     
     public void tirar(){
         System.out.println("Sasageyo sasageyo ");
-        System.out.println("Abandonen toda ");
+        System.out.println("Abandonen toda esperanza");
     }
     
 }
