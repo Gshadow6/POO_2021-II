@@ -54,4 +54,23 @@ public class PuertaDeSeguridad extends Puerta{
         System.out.println("Verificando...");
         return this.contrasenia != null;
     }
+
+    @Override
+    public void abrir() {
+        if (this.getContrasenia()== "1234dios"){
+            super.abrir();
+            System.out.println("Contraseña correcta ....");
+        }else{
+            System.out.println("Contraseña invalida... revise sus datos");
+            super.abrir(); //To change body of generated methods, choose Tools | Templates.
+            }
+    }
+
+   
+    @Override
+    public void cerrar() {
+        super.cerrar();
+    }
+    
+    
 }

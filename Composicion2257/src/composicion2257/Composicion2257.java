@@ -56,6 +56,15 @@ public class Composicion2257 {
         
         PuertaDeSeguridad puer2 = new PuertaDeSeguridad("Chapa electronica", "1234dios", "metal", Color.gray, false);
         System.out.println(puer2.toString());
+        puer2.abrir();
+        
+        System.out.println("--------------------- REFUNDIDO------------------");
+        Puerta nueva = (Puerta)puer2;
+        System.out.println(nueva);
+        System.out.println(((Puerta)nueva).toString());
+        puer2.abrir();
+        System.out.println("------- Llamando al metodo de la clase base");
+        ((Puerta)puer2).abrir();
         
         System.out.println("-------------creacion de habitacion---------------");
         System.out.println("----------------------------------------------------------------------------------------------");
