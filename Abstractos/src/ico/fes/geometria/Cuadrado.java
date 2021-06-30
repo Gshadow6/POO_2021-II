@@ -9,7 +9,7 @@ package ico.fes.geometria;
  *
  * @author AXEL
  */
-public class Cuadrado implements figura{
+public class Cuadrado implements Figura{
     private float lado;
 
     public Cuadrado() {

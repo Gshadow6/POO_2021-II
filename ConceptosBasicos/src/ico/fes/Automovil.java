@@ -56,7 +56,11 @@ public class Automovil {
     }
 
     public void setModelo(int modelo) {
+        if (modelo<2022){
         this.modelo = modelo;
+        }else{
+            System.out.println("Año/modelo fuera del rango...");
+        }
     }
 
     @Override

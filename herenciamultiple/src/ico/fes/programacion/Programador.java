@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ico.fes.geometria;
+package ico.fes.programacion;
 
 /**
  *
  * @author AXEL
  */
-public interface figura {
-    public abstract void area();
+public interface Programador {
+    public abstract int programar(); //regresa las horas totales de programacion
+    public abstract void probarCodigo();
 }

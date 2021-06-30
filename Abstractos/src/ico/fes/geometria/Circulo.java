@@ -9,7 +9,7 @@ package ico.fes.geometria;
  *
  * @author AXEL
  */
-public class Circulo implements figura{
+public class Circulo implements Figura{
     private float radio;
 
     public Circulo() {
